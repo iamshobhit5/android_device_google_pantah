@@ -41,6 +41,9 @@ PRODUCT_PACKAGES += \
     libacryl_hdr_plugin \
     libexynosv4l2
 
+# Face unlock
+$(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
+
 # Fingerprint
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
