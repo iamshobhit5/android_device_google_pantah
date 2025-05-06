@@ -21,14 +21,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Iwlan
 
-# PowerShare
-include hardware/google/pixel/powershare/device.mk
-
-
- 
+# Pixel Parts
+$(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
 
 # Pixel overlays
 $(call inherit-product-if-exists, vendor/pixeloverlays/config.mk)
+
+# PowerShare
+include hardware/google/pixel/powershare/device.mk
 
 # wireless_charger HAL service
 include device/google/gs-common/wireless_charger/wireless_charger.mk
