@@ -27,12 +27,3 @@ PRODUCT_DEVICE := cheetah
 PRODUCT_MODEL := AOSP on Cheetah
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := Google
-
-DEVICE_MANIFEST_FILE := \
-	device/google/pantah/manifest.xml
-
-# Keep the VNDK APEX in /system partition for REL branches as these branches are
-# expected to have stable API/ABI surfaces.
-ifneq (REL,$(PLATFORM_VERSION_CODENAME))
-  PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
-endif
